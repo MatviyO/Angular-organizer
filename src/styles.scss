@@ -1,6 +1,6 @@
 
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
@@ -61,4 +61,26 @@ table th {
   border: none;
   cursor: pointer;
   margin-right: .5rem;
+  transition: opacity .2s;
+  outline: none;
+  &:disabled {
+    background: var(--dark-color);
+    color: #fff;
+    cursor: not-allowed;
+  }
+  &:hover:not(:disabled) {
+    opacity: .8;
+  }
 }
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+.text-center {
+  text-align: center;
+}
+
