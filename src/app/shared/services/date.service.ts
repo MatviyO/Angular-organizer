@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 import * as moment from 'moment';
 @Injectable({ providedIn: 'root'
 })
@@ -8,6 +8,5 @@ export class DateService {
   changeMonth(dir: number) {
     const value = this.date.value.add(dir, 'month');
     this.date.next(value);
-    console.log(this.date);
   }
 }
