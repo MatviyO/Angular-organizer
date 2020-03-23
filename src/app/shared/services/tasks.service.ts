@@ -29,6 +29,13 @@ export class TasksService {
         return Object.keys(tasks).map(key => ({...tasks[key], id: key}));
       }));
   }
+  get(date: moment.Moment): Observable<Task[]> {
+    return this.http
+      .get<Task[]>(`${TasksService.url}.json`)
+      .pipe(map(tasks => {
+        return Object.keys(tasks).map(key => ({...tasks[key], id: key}));
+      }));
+  }
   create(task: Task): Observable<Task> {
     return this.http
       .post<CreateResponse>(`${TasksService.url}/${task.date}.json`, task)

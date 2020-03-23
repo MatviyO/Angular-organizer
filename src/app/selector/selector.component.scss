@@ -1,14 +1,29 @@
-p {
+div {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  span {
-    margin: 0 2rem;
-    text-align: center;
-    width: 200px;
+  height: 50px;
+  p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(60deg, #f5700c, #ff9800);
+    border-radius: 7px;
+  width: 25%;
+    span {
+      margin: 0 2rem;
+      text-align: center;
+      width: 200px;
+    }
+    i {
+      cursor: pointer;
+    }
   }
-  i {
-    cursor: pointer;
+  .act {
+    font-weight: bold;
   }
-}
 
+
+}
