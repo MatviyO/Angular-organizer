@@ -1,33 +1,49 @@
+<div class="card">
+  <div class="card-header card-header-primary">
+    <h4 class="card-title">Organizer: <strong>{{dateService.date | async | moment: 'DD.MM.YYYY' }}</strong></h4>
 
-
-
-
-<section>
-  <div class="div">
-    <div class="div-header">
-      Organizer: <strong>{{dateService.date | async | moment: 'DD.MM.YYYY' }}</strong>
-    </div>
   </div>
 
-  <main>
-    <ul *ngIf="tasks.length; else noTask">
-    <li class="task" *ngFor="let task of tasks; let i = index">
-      <span>
-        <strong>{{i + 1}}</strong>
-        {{task.title}}
-      </span>
-     <i class="primary material-icons" (click)="remove(task)">delete</i>
-    </li>
-    </ul>
-    <ng-template #noTask>
-      <p class="text-center">No task this day</p>
-    </ng-template>
-  </main>
-  <footer>
+  <div class="col-md-12 mt-3">
+    <div class="places-buttons">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+          <div class="row">
+            <table class="table table-hover" *ngIf="tasks.length; else noTask">
+              <thead class="text-warning">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Remove</th>
+              </thead>
+              <tbody>
+              <tr *ngFor="let task of tasks; let i = index">
+                <td> <strong>{{i + 1}}</strong></td>
+                <td> {{task.title}} </td>
+                <td>  <i class="primary material-icons" (click)="remove(task)">delete</i> </td>
+              </tr>
+              </tbody>
+            </table>
+            <ng-template #noTask>
+              <p class="text-center">No task this day</p>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
     <form (ngSubmit)="submit()" [formGroup]="form">
-      <input type="text" formControlName="title" placeholder="New Task">
-      <button type="submit" [disabled]="form.invalid"
-      class="btn btn-primary btn-block">Add</button>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="bmd-label-floating">New Task</label>
+            <input type="text" formControlName="title" class="form-control">
+          </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary pull-right">Add</button>
     </form>
-  </footer>
-</section>
+  </div>
+</div>
+
+
