@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DateService} from '../shared/services/date.service';
-import {BehaviorSubject} from 'rxjs';
-import * as moment from 'moment';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Task, TasksService} from '../shared/services/tasks.service';
 import {switchMap} from 'rxjs/operators';
